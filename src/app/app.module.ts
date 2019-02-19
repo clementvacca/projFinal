@@ -6,10 +6,12 @@ import {RouterModule} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {routes} from './routes';
 import {FormsModule} from '@angular/forms';
+import { StagiairesComponent } from './rest/stagiaires/stagiaires.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StagiairesComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule
