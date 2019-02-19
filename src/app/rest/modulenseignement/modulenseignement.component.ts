@@ -8,7 +8,7 @@ import {Modulenseignement} from '../../model/modulenseignement/modulenseignement
   styleUrls: ['./modulenseignement.component.css']
 })
 export class ModulenseignementComponent implements OnInit {
-  private modulenseignement: Modulenseignement
+  private modulenseignement: Modulenseignement;
   constructor(private modEnsServ: ModulenseignementService) { }
 
   ngOnInit() {
