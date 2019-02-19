@@ -10,6 +10,7 @@ import {FormationComponent} from './rest/formation/formation.component';
 import {StagiairesComponent} from './rest/stagiaires/stagiaires.component';
 import {ModulenseignementComponent} from './rest/modulenseignement/modulenseignement.component';
 import { FormationEditComponent } from './rest/formation/formation-edit/formation-edit.component';
+import { FormationDetailComponent } from './rest/formation/formation-detail/formation-detail.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormationEditComponent } from './rest/formation/formation-edit/formatio
     FormationComponent,
     StagiairesComponent,
     ModulenseignementComponent,
-    FormationEditComponent
+    FormationEditComponent,
+    FormationDetailComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule
