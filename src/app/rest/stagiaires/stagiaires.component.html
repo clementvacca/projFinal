@@ -1,3 +1,16 @@
-<p>
-  stagiaires works!
-</p>
+<table>
+  <tr *ngFor="let s of stagiaires">
+    <td>{{s.id}}</td>
+    <td>{{s.nom}}</td>
+    <td>{{s.prenom}}</td>
+    <td>{{s.coordonnees}}</td>
+    <td>{{s.ordinateur.code}}</td>
+    <td>{{s.nom}}</td>
+    <td>
+      <a [routerLink]="['/ordinateur','edit',o.code]" routerLinkActive="active">editer</a>
+    </td>
+    <td>
+      <button (click)="delete(o.code)">supprimer</button>
+    </td>
+  </tr>
+</table>
