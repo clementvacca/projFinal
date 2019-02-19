@@ -1,13 +1,11 @@
 <div>
-  <h1 align="center">Page de gestion de modules d'une formation</h1>
-  Titre: <input [(ngModel)]="modulenseignement.titre"><br>
-  Durée: <input [(ngModel)]="modulenseignement.duree"><br>
-  Objectif: <input [(ngModel)]="modulenseignement.objectif"><br>
-  Prérequis: <input [(ngModel)]="modulenseignement.prerequis"><br>
-  Contenu: <input [(ngModel)]="modulenseignement.contenu"><br>
-  Date de début: <input [(ngModel)]="modulenseignement.dateDebut"><br>
-  Date de fin: <input [(ngModel)]="modulenseignement.dateFin"><br>
-  Niveau: <input [(ngModel)]="modulenseignement.niveau"><br>
-  Matière: <input [(ngModel)]="modulenseignement.matiere"><br>
+  <h1 align="center">Page de gestion des modules d'une formation</h1>
+  <tr *ngFor="let m of modulenseignement">
+    <td>{{m.titre}}</td>
+    <td>{{m.duree}}</td>
+    <td>{{m.objectif}}</td>
+    <td>{{m.prerequis}}</td>
+    <td>{{m.contenu}}</td>
+  </tr>
 
 </div>
