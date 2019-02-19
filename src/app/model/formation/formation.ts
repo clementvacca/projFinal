@@ -1,7 +1,7 @@
 export class Formation {
 
-  constructor( private _nomFormation?: string){
-    this._nomFormation=_nomFormation;
+  constructor(private _nomFormation?: string) {
+    this._nomFormation = _nomFormation;
   }
 
 
