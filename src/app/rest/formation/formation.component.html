@@ -7,12 +7,6 @@
     <tr *ngFor="let f of formations">
       <td>{{f.nomFormation}}</td>
       <td>
-        <a [routerLink]="['/formation','edit',o.code]" routerLinkActive="active">editer</a
-      </td>
-      <td>
-        <button (click)="delete(f.id)">supprimer</button>
-      </td>
-      <td>
         <button href="">details</button>
       </td>
     </tr>
