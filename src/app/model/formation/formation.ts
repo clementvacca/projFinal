@@ -1,17 +1,25 @@
 export class Formation {
   private _id: string;
 
-  constructor(private _nomFormation?: string) {
-    this._nomFormation = _nomFormation;
+  constructor(_id?: string, private _dateDebut?: Date, private _duree?: number) {
+    this._id = _id;
   }
 
 
-  get nomFormation(): string {
-    return this._nomFormation;
+  get dateDebut(): Date {
+    return this._dateDebut;
   }
 
-  set nomFormation(value: string) {
-    this._nomFormation = value;
+  set dateDebut(value: Date) {
+    this._dateDebut = value;
+  }
+
+  get duree(): number {
+    return this._duree;
+  }
+
+  set duree(value: number) {
+    this._duree = value;
   }
 
   get id(): string {

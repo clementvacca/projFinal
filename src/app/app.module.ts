@@ -9,13 +9,15 @@ import {FormsModule} from '@angular/forms';
 import {FormationComponent} from './rest/formation/formation.component';
 import {StagiairesComponent} from './rest/stagiaires/stagiaires.component';
 import {ModulenseignementComponent} from './rest/modulenseignement/modulenseignement.component';
+import { FormationEditComponent } from './rest/formation/formation-edit/formation-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormationComponent,
     StagiairesComponent,
-    ModulenseignementComponent
+    ModulenseignementComponent,
+    FormationEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule

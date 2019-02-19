@@ -22,7 +22,7 @@ export class FormationComponent implements OnInit {
   private list() {
     this.formationService.findAll().subscribe(result => {
       console.log(result);
-      this.formations = result._embedded.ordinateurs;
+      this.formations = result;
     });
   }
 
