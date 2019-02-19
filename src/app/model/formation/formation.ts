@@ -1,13 +1,8 @@
 export class Formation {
+  private _id: string;
 
-<<<<<<< HEAD
   constructor(private _nomFormation?: string) {
     this._nomFormation = _nomFormation;
-=======
-  constructor( private _id: string, private _nomFormation?: string){
-    this._nomFormation=_nomFormation;
-    this._id=_id;
->>>>>>> e862bf713644a7830d65b74ff2d2284cef18d05e
   }
 
 
