@@ -12,7 +12,7 @@ export class StagiairesComponent implements OnInit {
 
   private stagiaires: Stagiaire[];
 
-  constructor(private formationService: FormationService) {
+  constructor(private stagiaireService: StagiairesService) {
   }
 
   ngOnInit() {
@@ -20,9 +20,9 @@ export class StagiairesComponent implements OnInit {
   }
 
   private list() {
-    this.formationService.findAll().subscribe(result => {
-      console.log(result.formations)
-      this.stagiaires = result.formations.stagiaires;
+    this.stagiaireService.findAll().subscribe(result => {
+      console.log(result);
+      this.stagiaires = result;
     });
   }
 }
