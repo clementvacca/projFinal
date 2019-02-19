@@ -26,8 +26,8 @@ export class FormationComponent implements OnInit {
     });
   }
 
-  delete(code: string) {
-    this.formationService.delete(code).subscribe(result => {
+  delete(id: string) {
+    this.formationService.delete(id).subscribe(result => {
       this.list();
     }, error => {
       console.log(error);
