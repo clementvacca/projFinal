@@ -19,7 +19,7 @@ export class StagiairesComponent implements OnInit {
 
   private list() {
     this.stagiaireService.findAll().subscribe(result => {
-      this.stagiaires = result.stagiaires;
+      this.stagiaires = result.formations.stagiaires;
     });
   }
 }
