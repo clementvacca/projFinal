@@ -20,16 +20,16 @@ export class FormationService {
     }
 
   public findAll(): Observable<any> {
-      return this.http.get<any>('http://localhost:8080/demo/api/formations/', {headers: this.headers});
+      return this.http.get<any>('http://localhost:8080/ajc/rest/gestionnaire/', {headers: this.headers});
   }
 
   public findById(id: string): Observable<any> {
-      return this.http.get<any>(`http://localhost:8080/demo/api/formations/${id}`, {headers: this.headers});
+      return this.http.get<any>(`http://localhost:8080/ajc/rest/gestionnaire/formation/${id}`, {headers: this.headers});
   }
 
   public delete(id: string): Observable<any> {
       return this.http.delete(`
-    http://localhost:8080/demo/api/formations/${id}`, {headers: this.headers});
+   http://localhost:8080/ajc/rest/gestionnaire/formation/${id}`, {headers: this.headers});
   }
 
   public update(formation: Formation): Observable<any> {
