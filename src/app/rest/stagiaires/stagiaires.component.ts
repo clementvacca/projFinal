@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Stagiaire} from '../../model/stagiaire/stagiaire';
+import {StagiairesService} from '../services/stagiaires/stagiaires.service';
 
 @Component({
   selector: 'app-stagiaires',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StagiairesComponent implements OnInit {
 
-  constructor() { }
+  private stagiaires: Stagiaire[];
+
+  constructor(private stagiaireService: StagiairesService) {
+  }
 
   ngOnInit() {
   }
 
+  private list() {
+    this.stagiaireService.findAll().subscribe(result => {
+      this.stagiaires = result.stagiaires;
+    });
+  }
 }
