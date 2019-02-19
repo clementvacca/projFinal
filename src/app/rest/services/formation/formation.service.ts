@@ -20,7 +20,7 @@ export class FormationService {
     }
 
   public findAll(): Observable<any> {
-      return this.http.get<any>('http://localhost:8080/ajc/rest/gestionnaire/', {headers: this.headers});
+      return this.http.get<any>('http://localhost:8080/ajc/rest/formation/', {headers: this.headers});
   }
 
   public findById(id: string): Observable<any> {
@@ -39,7 +39,7 @@ export class FormationService {
 
   public create(formation: Formation): Observable<any> {
       const f = {
-        'nomFormation': formation.nomFormation
+        'id': formation.id
       };
     return this.http.post<any>(`http://localhost:8080/demo/api/formations`, f, {headers: this.headers});
   }

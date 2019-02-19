@@ -16,7 +16,7 @@ export class ModulenseignementService {
   }
 
   public findAll(): Observable<any> {
-    return this.http.get<any>('http://localhost:8080/ajc/rest/modulenseignement/', {headers: this.headers});
+    return this.http.get<any>('http://localhost:8080/ajc/rest/module', {headers: this.headers});
   }
 
 }

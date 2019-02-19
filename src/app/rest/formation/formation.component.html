@@ -1,14 +1,23 @@
-<p>
-  it works
-</p>
 <div>
   <h1> Liste des Formations </h1>
+  <button >Ajouter une formation</button>
   <table>
+    <tr>
+      <th>Nom de la formation</th>
+      <th>Date début formation</th>
+      <th> Durée formation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+
+    </tr>
     <tr *ngFor="let f of formations">
-      <td>{{f.nomFormation}}</td>
-      <td>
-        <button href="">details</button>
-      </td>
+      <td>{{f.id}}</td>
+      <td>{{f.dateDebut}}</td>
+      <td>{{f.duree}}</td>
+      <td><button>Details</button> </td>
+      <td><button>Editer</button> </td>
+      <td><button (click)="delete(f.id)">Supprimer</button> </td>
     </tr>
   </table>
 

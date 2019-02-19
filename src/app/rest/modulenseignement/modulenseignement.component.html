@@ -1,16 +1,11 @@
-<p>
-  modulenseignement works!
-</p>
 <div>
-  <h1>Page de gestion de modules d'une formation</h1>
-  Titre: <input [(ngModel)]="module.titre"><br>
-  Durée: <input [(ngModel)]="module.duree"><br>
-  Objectif: <input [(ngModel)]="module"><br>
-  Prérequis: <input [(ngModel)]="module"><br>
-  Contenu: <input [(ngModel)]="module"><br>
-  Date de début: <input [(ngModel)]="module"><br>
-  Date de fin: <input [(ngModel)]="module"><br>
-  Niveau: <input [(ngModel)]="module"><br>
-  Matière: <input [(ngModel)]="module"><br>
+  <h1 align="center">Page de gestion des modules d'une formation</h1>
+  <tr *ngFor="let m of modulenseignement">
+    <td>{{m.titre}}</td>
+    <td>{{m.duree}}</td>
+    <td>{{m.objectif}}</td>
+    <td>{{m.prerequis}}</td>
+    <td>{{m.contenu}}</td>
+  </tr>
 
 </div>

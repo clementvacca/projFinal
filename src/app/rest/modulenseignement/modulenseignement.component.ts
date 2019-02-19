@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ModulenseignementService} from '../services/modulenseignement/modulenseignement.service';
 import {Modulenseignement} from '../../model/modulenseignement/modulenseignement';
 
@@ -8,14 +8,18 @@ import {Modulenseignement} from '../../model/modulenseignement/modulenseignement
   styleUrls: ['./modulenseignement.component.css']
 })
 export class ModulenseignementComponent implements OnInit {
-  private modulenseignement: Modulenseignement
-  constructor(private modEnsServ: ModulenseignementService) { }
+  private modulenseignement: Modulenseignement[];
 
-  ngOnInit() {
+  constructor(private modEnsServ: ModulenseignementService) {
   }
 
-  private list() {
-    this.modEnsServ.findAll().subscribe(result => {
+  ngOnInit() {
+    this.list();
+  }
+
+  private list() { // ici on appelle la fonction findAll du service
+    this.modEnsServ.findAll().subscribe(result => { // subscribe car c'est un observable
+      console.log(result);
       this.modulenseignement = result.modulenseignement;
     });
   }
