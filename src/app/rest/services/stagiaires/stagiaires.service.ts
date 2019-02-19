@@ -15,7 +15,7 @@ export class StagiairesService {
   }
 
   public findAll(): Observable<any> {
-    return this.http.get<any>('http://localhost:8080/ajc/rest/stagiaires/', {headers: this.headers});
+    return this.http.get<any>('http://localhost:8080/ajc/rest/gestionnaire/formation/', {headers: this.headers});
   }
 
 }
