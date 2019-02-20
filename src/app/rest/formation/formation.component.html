@@ -15,7 +15,7 @@
       <td>{{f.id}}</td>
       <td>{{f.dateDebut}}</td>
       <td>{{f.duree}}</td>
-      <td><button>Details</button> </td>
+      <td><button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active">Details</button> </td>
       <td><button>Editer</button> </td>
       <td><button (click)="delete(f.id)">Supprimer</button> </td>
     </tr>

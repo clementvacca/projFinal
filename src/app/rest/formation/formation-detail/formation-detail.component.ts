@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Formation} from '../../../model/formation/formation';
+import {Stagiaire} from '../../../model/stagiaire/stagiaire';
+import {ActivatedRoute, Router} from '@angular/router';
+import {FormationService} from '../../services/formation/formation.service';
 
 @Component({
   selector: 'app-formation-detail',
@@ -8,12 +11,22 @@ import {Formation} from '../../../model/formation/formation';
 })
 export class FormationDetailComponent implements OnInit {
 
-  public formation: Formation;
+  public formation: Formation = new Formation();
+  public stagiaires: Stagiaire[];
+  private edit = false;
 
-  constructor() {
+
+  constructor( private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit() { this.activatedRoute.params.subscribe(params => {
+    if (params.id) {
+      this.edit = true;
+      this.formationService.findById(params.id).subscribe(result => {
+        this.formation = result;
+      });
+    }
+  });
   }
 
 }

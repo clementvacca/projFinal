@@ -24,12 +24,12 @@ export class FormationService {
   }
 
   public findById(id: string): Observable<any> {
-      return this.http.get<any>(`http://localhost:8080/ajc/rest/gestionnaire/formation/${id}`, {headers: this.headers});
+      return this.http.get<any>(`http://localhost:8080/ajc/rest/formation/${id}`, {headers: this.headers});
   }
 
   public delete(id: string): Observable<any> {
       return this.http.delete(`
-   http://localhost:8080/ajc/rest/gestionnaire/formation/${id}`, {headers: this.headers});
+   http://localhost:8080/ajc/rest/formation`, {headers: this.headers});
   }
 
   public update(formation: Formation): Observable<any> {
@@ -39,8 +39,10 @@ export class FormationService {
 
   public create(formation: Formation): Observable<any> {
       const f = {
-        'id': formation.id
+        'id': formation.id,
+        'dateDebut': formation.dateDebut,
+        'duree': formation.duree
       };
-    return this.http.post<any>(`http://localhost:8080/demo/api/formations`, f, {headers: this.headers});
+    return this.http.post<any>(`http://localhost:8080/ajc/rest/formation`, f, {headers: this.headers});
   }
 }

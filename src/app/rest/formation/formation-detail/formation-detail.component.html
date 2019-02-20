@@ -1,5 +1,5 @@
 <div>
-  <h1> Détails de la formation {{formation.id}} </h1>
+  <h1> Détails de la formation  </h1>
 
   <table>
     <tr>
@@ -13,18 +13,5 @@
       <td>{{formation.duree}}</td>
     </tr>
   </table>
-
-  <h2>Liste de stagiaires</h2>
-  <table>
-    <tr>
-      <th>prénom</th>
-      <th>nom</th>
-      <th>mail</th>
-      <th>tel</th>
-    </tr>
-    <tr *ngFor="let f of formations">
-      <td>{{f.stagiaire.prenom}}</td>
-      <td>{{f.dateDebut}}</td>
-      <td>{{f.duree}}</td>
-  </table>
 </div>
+<app-stagiaires></app-stagiaires>
