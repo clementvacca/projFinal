@@ -13,9 +13,10 @@ export const routes: Routes = [
   {path: 'stagiaires', component: StagiairesComponent},
   {path: '', redirectTo: '/formations', pathMatch: 'full'},
   {path: 'formations', component: FormationComponent},
-  {path: 'formations/:id/edit', component: FormationEditComponent},
+  {path: 'formations/:titre/edit', component: FormationEditComponent},
   {path: 'formations/edit', component: FormationEditComponent},
-  {path: 'formations/:id/detail', component: FormationDetailComponent},
-  {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent},
+  {path: 'formations/:titre/detail', component: FormationDetailComponent},
+  {path: 'formations/:titre/detail/stagiaires/:edit/:id', component: EditStagiaireComponent},
+  {path: 'formations/:titre/detail/stagiaires/:edit/', component: EditStagiaireComponent},
   {path: 'modulenseignement', component: ModulenseignementComponent}
 ];

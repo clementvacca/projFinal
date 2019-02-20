@@ -1,5 +1,6 @@
 import {Adresse} from '../Adresse/adresse';
 import {Ordinateur} from '../ordinateur/ordinateur';
+import {Formation} from '../formation/formation';
 
 class Coordonees {
 }
@@ -11,6 +12,7 @@ export class Stagiaire {
   private _prenom: string;
   private _nom: string;
   private _ordinateur: Ordinateur;
+  private _formation: Formation;
 
   constructor(id?: number, coordonnees?: Coordonees, adresse?: Adresse, prenom?: string, nom?: string, ordinateur?: Ordinateur) {
     this._id = id;
@@ -21,6 +23,14 @@ export class Stagiaire {
     this._ordinateur = ordinateur;
   }
 
+
+  get formation(): Formation {
+    return this._formation;
+  }
+
+  set formation(value: Formation) {
+    this._formation = value;
+  }
 
   get id(): number {
     return this._id;

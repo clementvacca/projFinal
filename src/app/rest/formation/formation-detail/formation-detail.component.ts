@@ -13,7 +13,7 @@ export class FormationDetailComponent implements OnInit {
 
   public formation: Formation = new Formation();
   public stagiaires: Stagiaire[];
-  private edit = false;
+  private _edit = false;
 
 
   constructor(private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
@@ -21,16 +21,16 @@ export class FormationDetailComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      if (params.id) {
-        this.edit = true;
-        this.formationService.findById(params.id).subscribe(result => {
+      if (params.titre) {
+        this._edit = true;
+        this.formationService.findById(params.titre).subscribe(result => {
           this.formation = result;
         });
       }
     });
   }
   public save() {
-    if (this.edit) {
+    if (this._edit) {
       this.update();
     } else {
       this.create();
@@ -56,5 +56,14 @@ export class FormationDetailComponent implements OnInit {
 
   private goList() {
     this.router.navigate(['/formations']);
+  }
+
+
+  get edit(): boolean {
+    return this._edit;
+  }
+
+  set edit(value: boolean) {
+    this._edit = value;
   }
 }

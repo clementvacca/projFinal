@@ -12,6 +12,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class StagiairesFormationComponent implements OnInit {
 
   private stagiaires: Stagiaire[];
+  editFormation = false;
 
   constructor(private stagiaireService: FormationService, private stagiaireService2: StagiairesService,
               private activatedRoute: ActivatedRoute,
@@ -20,7 +21,8 @@ export class StagiairesFormationComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
-      this.list(params.id);
+      this.list(params.titre);
+      this.editFormation = true;
     });
   }
 
@@ -38,6 +40,13 @@ export class StagiairesFormationComponent implements OnInit {
       console.log(error);
     });
 
+  }
+
+  edit(id: number) {
+    this.activatedRoute.params.subscribe(params => {
+      this.router.navigate(['/formations', params.titre, 'detail', 'stagiaires',
+        this.editFormation, id]);
+    });
   }
 
 }

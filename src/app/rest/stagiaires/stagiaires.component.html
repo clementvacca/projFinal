@@ -10,11 +10,13 @@
       <td>Id</td>
       <td>Nom</td>
       <td>Prenom</td>
+      <td>Formation</td>
     </tr>
     <tr *ngFor="let s of stagiaires">
       <td>{{s.id}}</td>
       <td>{{s.nom}}</td>
       <td>{{s.prenom}}</td>
+      <td>{{s.formation.id}}</td>
       <td></td>
       <td>
         <button type="button" class="btn btn-info" [routerLink]="['/stagiaire','edit',s.id]" routerLinkActive="active">
