@@ -1,6 +1,7 @@
 
 <div class="form-group" *ngIf="edit;else create">
   Prenom:<input class="form-control" [(ngModel)]="stagiaire.prenom">
+  {{stagiaire.nom}}
   Nom:<input class="form-control" [(ngModel)]="stagiaire.nom">
 </div>
 <ng-template #create>

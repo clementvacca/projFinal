@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import { AlertModule } from 'ngx-bootstrap';
 
 import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
@@ -26,7 +27,7 @@ import { FormationDetailComponent } from './rest/formation/formation-detail/form
     FormationEditComponent,
   ],
   imports: [
-    BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule
+    BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]
