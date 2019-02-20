@@ -1,0 +1,17 @@
+
+  <!--<h2>Bonjour {{g.prenom}}</h2>-->
+  <button class="btn btn-light" (click)="deconnexion()"></button>
+
+
+<table class="table table-striped">
+  <tr>
+    <th>Date de début</th>
+    <th>Durée</th>
+    <th>Formations</th>
+  </tr>
+  <tr>
+    <td>{{f.dateDebut}}</td>
+    <td>{{f.duree}}</td>
+    <td><a [routerLink]="['/formation']" routerLinkActive="active">{{f.id}}</a></td>
+  </tr>
+</table>

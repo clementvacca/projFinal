@@ -6215,6 +6215,7 @@ a.close.disabled {
 
 .carousel {
   position: relative;
+  margin-top: 30px;
 }
 
 .carousel.pointer-event {
@@ -10036,3 +10037,4 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
