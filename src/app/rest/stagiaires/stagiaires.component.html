@@ -1,7 +1,10 @@
+<div class="container">
 <h1>Liste des stagiaires</h1>
+
 <button type="button" class="btn btn-success" [routerLink]="['/stagiaire','edit']" routerLinkActive="active">Ajout
   Stagiaire
 </button>
+
 <table class="table">
   <tr>
     <td>Id</td>
@@ -15,7 +18,7 @@
     <td></td>
     <td>
       <button type="button" class="btn btn-info" [routerLink]="['/stagiaire','edit',s.id]" routerLinkActive="active">
-        Edit
+        <span class="glyphicon glyphicon-pencil"></span>
       </button>
 
     </td>
@@ -24,5 +27,6 @@
     </td>
   </tr>
 </table>
+</div>
 <router-outlet></router-outlet>
 
