@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Formation} from '../../model/formation/formation';
 import {FormationService} from '../services/formation/formation.service';
+import {Stagiaire} from '../../model/stagiaire/stagiaire';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-formation',
@@ -10,9 +12,12 @@ import {FormationService} from '../services/formation/formation.service';
 export class FormationComponent implements OnInit {
 
 
-  private formations: Formation[];
+  public formations: Formation[] ;
+  public stagiaires: Stagiaire[];
+  private edit = false;
 
-  constructor(private formationService: FormationService) {
+
+  constructor( private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
@@ -33,6 +38,7 @@ export class FormationComponent implements OnInit {
       console.log(error);
     });
   }
+
 
 }
 

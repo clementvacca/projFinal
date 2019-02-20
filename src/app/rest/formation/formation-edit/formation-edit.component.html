@@ -1,15 +1,23 @@
-<p>
-  formation-edit works!
-</p>
+
 <div class="form-group" *ngIf="edit;else create">
-  id:<input readonly class="form-control" [(ngModel)]="formation.id">
+
+  <div class="form-group">
+    id:<input readonly class="form-control" [(ngModel)]="formation.id">
+    date début formation:<input class="form-control" [(ngModel)]="formation.dateDebut" type="date">
+
+
+    durée formation:<input class="form-control" [(ngModel)]="formation.duree">
+  </div>
 </div>
 <ng-template #create>
-  date début formation:<input class="form-control" [(ngModel)]="formation.dateDebut">
-</ng-template>
-<div class="form-group">
+  <div class="form-group">
+  id:<input  class="form-control" [(ngModel)]="formation.id">
+  date début formation:<input class="form-control" [(ngModel)]="formation.dateDebut" type="date">
+
+
   durée formation:<input class="form-control" [(ngModel)]="formation.duree">
 </div>
+</ng-template>
 <div class="form-group">
   <button (click)="save()">enregistrer</button>
   <button (click)="cancel()">annuler</button>

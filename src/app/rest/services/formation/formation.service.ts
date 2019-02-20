@@ -29,7 +29,7 @@ export class FormationService {
 
   public delete(id: string): Observable<any> {
       return this.http.delete(`
-   http://localhost:8080/ajc/rest/formation`, {headers: this.headers});
+   http://localhost:8080/ajc/rest/formation/${id}`, {headers: this.headers});
   }
 
   public update(formation: Formation): Observable<any> {

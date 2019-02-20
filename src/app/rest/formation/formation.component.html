@@ -1,6 +1,6 @@
 <div>
   <h1> Liste des Formations </h1>
-  <button >Ajouter une formation</button>
+  <button [routerLink]="['/formations','edit']" routerLinkActive="active">Ajouter une formation</button>
   <table>
     <tr>
       <th>Nom de la formation</th>
@@ -16,7 +16,7 @@
       <td>{{f.dateDebut}}</td>
       <td>{{f.duree}}</td>
       <td><button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active">Details</button> </td>
-      <td><button>Editer</button> </td>
+      <td><button [routerLink]="['/formations', f.id,'edit']" routerLinkActive="active">Editer</button> </td>
       <td><button (click)="delete(f.id)">Supprimer</button> </td>
     </tr>
   </table>

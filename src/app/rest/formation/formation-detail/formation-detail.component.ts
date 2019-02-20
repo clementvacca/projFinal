@@ -28,5 +28,32 @@ export class FormationDetailComponent implements OnInit {
     }
   });
   }
+  public save() {
+    if (this.edit) {
+      this.update();
+    } else {
+      this.create();
+    }
+  }
 
+  private create() {
+    this.formationService.create(this.formation).subscribe(result => {
+      this.goList();
+    });
+  }
+
+  private update() {
+    this.formationService.update(this.formation).subscribe(result => {
+      this.goList();
+    });
+  }
+
+
+  public cancel() {
+    this.goList();
+  }
+
+  private goList() {
+    this.router.navigate(['/formations']);
+  }
 }
