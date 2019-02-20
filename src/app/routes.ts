@@ -16,16 +16,13 @@ export const routes: Routes = [
   {path: 'formations', component: FormationComponent},
   {path: 'formations/:titre/edit', component: FormationEditComponent},
   {path: 'formations/edit', component: FormationEditComponent},
-<<<<<<< HEAD
   {path: 'formations/:titre/detail', component: FormationDetailComponent},
   {path: 'formations/:titre/detail/stagiaires/:edit/:id', component: EditStagiaireComponent},
   {path: 'formations/:titre/detail/stagiaires/:edit/', component: EditStagiaireComponent},
-  {path: 'modulenseignement', component: ModulenseignementComponent}
-=======
+  {path: 'modulenseignement', component: ModulenseignementComponent},
   {path: 'formations/:id/detail', component: FormationDetailComponent},
   {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent},
   {path: 'modulenseignement/edit/:titre', component: ModulenseignementComponent},
   {path: 'modulenseignement/edit', component: ModulenseignementComponent},
   {path: 'modulenseignementlist', component: ModulenseignementlistComponent}
->>>>>>> e511b0ec30388d9aabb795ca77ffa4d3e172eb48
 ];
