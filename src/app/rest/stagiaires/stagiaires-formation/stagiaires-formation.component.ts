@@ -13,7 +13,9 @@ export class StagiairesFormationComponent implements OnInit {
 
   private stagiaires: Stagiaire[];
 
-  constructor(private stagiaireService: FormationService, private stagiaireService2: StagiairesService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private stagiaireService: FormationService, private stagiaireService2: StagiairesService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class StagiairesFormationComponent implements OnInit {
 
   delete(id: number) {
     this.stagiaireService2.delete(id).subscribe(result => {
-      this.list();
+      this.list(result.id);
     }, error => {
       console.log(error);
     });
