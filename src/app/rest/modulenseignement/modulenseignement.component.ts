@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ModulenseignementService} from '../services/modulenseignement/modulenseignement.service';
 import {Modulenseignement} from '../../model/modulenseignement/modulenseignement';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-modulenseignement',
@@ -8,9 +9,10 @@ import {Modulenseignement} from '../../model/modulenseignement/modulenseignement
   styleUrls: ['./modulenseignement.component.css']
 })
 export class ModulenseignementComponent implements OnInit {
-  private modulenseignement: Modulenseignement[];
+  private modulenseignement: Modulenseignement = new Modulenseignement();
+  private edit = false;
 
-  constructor(private modEnsServ: ModulenseignementService) {
+  constructor(private modEnsServ: ModulenseignementService, private activatedRoute: ActivatedRoute, private router: Router  ) {
   }
 
   ngOnInit() {

@@ -10,7 +10,7 @@ export class Modulenseignement {
   private _matiere: string;
 
 
-  constructor(titre: string, duree: number, objectif: string, prerequis: string, contenu: string, dateDebut: number, dateFin: number, niveau: string, matiere: string) {
+  constructor(titre?: string, duree?: number, objectif?: string, prerequis?: string, contenu?: string, dateDebut?: number, dateFin?: number, niveau?: string, matiere?: string) {
     this._titre = titre;
     this._duree = duree;
     this._objectif = objectif;
@@ -21,7 +21,6 @@ export class Modulenseignement {
     this._niveau = niveau;
     this._matiere = matiere;
   }
-
 
   get titre(): string {
     return this._titre;
