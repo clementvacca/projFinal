@@ -1,5 +1,11 @@
-  <h1 align="center">Page de gestion des modules d'une formation</h1>
-<div class="container">
+
+  <header>
+    <h1 style="text-align: center; color: #0f6674; margin-top: 30px">
+      Gestion des modules d'une formation
+      <img src="assets/images/ajc.PNG" alt="logo">
+    </h1>
+  </header>
+  <div class="container">
   <!-- Si tu on est en mode edit les champ seront pour l'edition; sinon on crée => on passe aux champs de ng-template-->
   <div class="form-group" *ngIf="edit;else create">
   Titre:<input class="form-control" [(ngModel)]="modulenseignement.titre">

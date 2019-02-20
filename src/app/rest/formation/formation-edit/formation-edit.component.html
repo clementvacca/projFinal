@@ -1,25 +1,30 @@
+<header>
+<h1 style="text-align: center; color: #0f6674; margin-top: 30px">
+  Edition et Ajout d'une formation
+  <img src="assets/images/ajc.PNG" alt="logo">
+</h1>
+</header>
 
 <div class="form-group" *ngIf="edit;else create">
 
   <div class="form-group">
-    id:<input readonly class="form-control" [(ngModel)]="formation.id">
-    date début formation:<input class="form-control" [(ngModel)]="formation.dateDebut" type="date">
-
-
-    durée formation:<input class="form-control" [(ngModel)]="formation.duree">
+    Id:<input readonly class="form-control" [(ngModel)]="formation.id">
+    Date de début de formation:<input class="form-control" [(ngModel)]="formation.dateDebut" type="date">
+    Durée de formation:<input class="form-control" [(ngModel)]="formation.duree">
   </div>
+
 </div>
+
 <ng-template #create>
   <div class="form-group">
-  id:<input  class="form-control" [(ngModel)]="formation.id">
-  date début formation:<input class="form-control" [(ngModel)]="formation.dateDebut" type="date">
-
-
-  durée formation:<input class="form-control" [(ngModel)]="formation.duree">
+  Id:<input  class="form-control" [(ngModel)]="formation.id"> <br>
+  Date de début de formation:<input class="form-control" [(ngModel)]="formation.dateDebut" type="date"> <br>
+  Durée de formation:<input class="form-control" [(ngModel)]="formation.duree">
 </div>
 </ng-template>
+
 <div class="form-group">
-  <button (click)="save()">enregistrer</button>
-  <button (click)="cancel()">annuler</button>
+  <button (click)="save()" class="btn btn-success">Enregistrer</button>&nbsp;
+  <button (click)="cancel()" class="btn btn-danger">Annuler</button>
 </div>
 

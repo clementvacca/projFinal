@@ -15,6 +15,7 @@ import { FormationEditComponent } from './rest/formation/formation-edit/formatio
 import { FormationDetailComponent } from './rest/formation/formation-detail/formation-detail.component';
 import { StagiairesFormationComponent } from './rest/stagiaires/stagiaires-formation/stagiaires-formation.component';
 import { ModulenseignementlistComponent } from './rest/modulenseignement/modulenseignementlist/modulenseignementlist.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ModulenseignementlistComponent } from './rest/modulenseignement/modulen
     FormationEditComponent,
     StagiairesFormationComponent,
     ModulenseignementlistComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, AlertModule
