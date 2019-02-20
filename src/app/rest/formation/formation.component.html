@@ -1,7 +1,7 @@
 <div>
   <h1> Liste des Formations </h1>
-  <button >Ajouter une formation</button>
-  <table>
+  <button type="button" class="btn btn-success" >Ajouter une formation</button>
+  <table class="table">
     <tr>
       <th>Nom de la formation</th>
       <th>Date début formation</th>
@@ -15,9 +15,9 @@
       <td>{{f.id}}</td>
       <td>{{f.dateDebut}}</td>
       <td>{{f.duree}}</td>
-      <td><button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active">Details</button> </td>
-      <td><button>Editer</button> </td>
-      <td><button (click)="delete(f.id)">Supprimer</button> </td>
+      <td><button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active" type="button" class="btn btn-info" >Details</button> </td>
+      <td><button type="button" class="btn btn-info" >Editer</button> </td>
+      <td><button (click)="delete(f.id)" type="button" class="btn btn-danger" >Supprimer</button> </td>
     </tr>
   </table>
 

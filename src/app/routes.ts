@@ -4,6 +4,7 @@ import {StagiairesComponent} from './rest/stagiaires/stagiaires.component';
 import {FormationComponent} from './rest/formation/formation.component';
 import {FormationEditComponent} from './rest/formation/formation-edit/formation-edit.component';
 import {FormationDetailComponent} from './rest/formation/formation-detail/formation-detail.component';
+import {StagiairesFormationComponent} from './rest/stagiaires/stagiaires-formation/stagiaires-formation.component';
 
 export const routes: Routes = [
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
@@ -14,5 +15,6 @@ export const routes: Routes = [
   {path: 'formations', component: FormationComponent},
   {path: 'formations/edit/:id', component: FormationEditComponent},
   {path: 'formations/edit/', component: FormationEditComponent},
-  {path: 'formations/:id/detail', component: FormationDetailComponent}
+  {path: 'formations/:id/detail', component: FormationDetailComponent},
+  {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent}
 ];

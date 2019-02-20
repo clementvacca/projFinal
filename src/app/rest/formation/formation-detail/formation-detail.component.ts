@@ -16,17 +16,18 @@ export class FormationDetailComponent implements OnInit {
   private edit = false;
 
 
-  constructor( private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
-  ngOnInit() { this.activatedRoute.params.subscribe(params => {
-    if (params.id) {
-      this.edit = true;
-      this.formationService.findById(params.id).subscribe(result => {
-        this.formation = result;
-      });
-    }
-  });
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      if (params.id) {
+        this.edit = true;
+        this.formationService.findById(params.id).subscribe(result => {
+          this.formation = result;
+        });
+      }
+    });
   }
 
 }
