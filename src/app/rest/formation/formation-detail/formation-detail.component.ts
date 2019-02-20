@@ -16,17 +16,45 @@ export class FormationDetailComponent implements OnInit {
   private edit = false;
 
 
-  constructor( private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
-  ngOnInit() { this.activatedRoute.params.subscribe(params => {
-    if (params.id) {
-      this.edit = true;
-      this.formationService.findById(params.id).subscribe(result => {
-        this.formation = result;
-      });
+  ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      if (params.id) {
+        this.edit = true;
+        this.formationService.findById(params.id).subscribe(result => {
+          this.formation = result;
+        });
+      }
+    });
+  }
+  public save() {
+    if (this.edit) {
+      this.update();
+    } else {
+      this.create();
     }
-  });
   }
 
+  private create() {
+    this.formationService.create(this.formation).subscribe(result => {
+      this.goList();
+    });
+  }
+
+  private update() {
+    this.formationService.update(this.formation).subscribe(result => {
+      this.goList();
+    });
+  }
+
+
+  public cancel() {
+    this.goList();
+  }
+
+  private goList() {
+    this.router.navigate(['/formations']);
+  }
 }

@@ -1,7 +1,12 @@
 <div>
   <h1> Liste des Formations </h1>
-  <button >Ajouter une formation</button>
+<<<<<<< HEAD
+  <button [routerLink]="['/formations','edit']" routerLinkActive="active">Ajouter une formation</button>
   <table>
+=======
+  <button type="button" class="btn btn-success" >Ajouter une formation</button>
+  <table class="table">
+>>>>>>> eb514f41c3c4846450efcc95736b8e253cba9a9a
     <tr>
       <th>Nom de la formation</th>
       <th>Date début formation</th>
@@ -15,9 +20,15 @@
       <td>{{f.id}}</td>
       <td>{{f.dateDebut}}</td>
       <td>{{f.duree}}</td>
+<<<<<<< HEAD
       <td><button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active">Details</button> </td>
-      <td><button>Editer</button> </td>
+      <td><button [routerLink]="['/formations', f.id,'edit']" routerLinkActive="active">Editer</button> </td>
       <td><button (click)="delete(f.id)">Supprimer</button> </td>
+=======
+      <td><button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active" type="button" class="btn btn-info" >Details</button> </td>
+      <td><button type="button" class="btn btn-info" >Editer</button> </td>
+      <td><button (click)="delete(f.id)" type="button" class="btn btn-danger" >Supprimer</button> </td>
+>>>>>>> eb514f41c3c4846450efcc95736b8e253cba9a9a
     </tr>
   </table>
 
