@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Liste des stagiaires</h1>
+
+  <button type="button" class="btn btn-success" [routerLink]="['/stagiaire','edit']" routerLinkActive="active">Ajout
+    Stagiaire
+  </button>
+
+  <table class="table">
+    <tr>
+      <td>Id</td>
+      <td>Nom</td>
+      <td>Prenom</td>
+    </tr>
+    <tr *ngFor="let s of stagiaires">
+      <td>{{s.id}}</td>
+      <td>{{s.nom}}</td>
+      <td>{{s.prenom}}</td>
+      <td></td>
+      <td>
+        <button type="button" class="btn btn-info" [routerLink]="['/stagiaire','edit',s.id]" routerLinkActive="active">
+          <span class="glyphicon glyphicon-pencil"></span>Edit
+        </button>
+
+      </td>
+      <td>
+        <button (click)=delete(s.id) class="btn btn-danger">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<router-outlet></router-outlet>
+
+

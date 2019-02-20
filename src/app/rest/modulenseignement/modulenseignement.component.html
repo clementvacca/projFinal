@@ -1,11 +1,21 @@
-<div>
   <h1 align="center">Page de gestion des modules d'une formation</h1>
-  <tr *ngFor="let m of modulenseignement">
-    <td>{{m.titre}}</td>
-    <td>{{m.duree}}</td>
-    <td>{{m.objectif}}</td>
-    <td>{{m.prerequis}}</td>
-    <td>{{m.contenu}}</td>
-  </tr>
+<!-- Si tu on est en mode edit les champ seront pour l'edition; sinon on crée => on passe aux champs de ng-template-->
+  <div class="form-group" *ngIf="edit;else create">
+  Titre:<input class="form-control" [(ngModel)]="modulenseignement.titre">
+  Duree:<input class="form-control" [(ngModel)]="modulenseignement.duree">
+  Objectif:<input class="form-control" [(ngModel)]="modulenseignement.objectif">
+  Prerequis:<input class="form-control" [(ngModel)]="modulenseignement.prerequis">
+  Contenu:<input class="form-control" [(ngModel)]="modulenseignement.contenu">
+</div>
+<ng-template #create>
+  Titre:<input class="form-control" [(ngModel)]="modulenseignement.titre">
+  Duree:<input class="form-control" [(ngModel)]="modulenseignement.duree">
+  Objectif:<input class="form-control" [(ngModel)]="modulenseignement.objectif">
+  Prerequis:<input class="form-control" [(ngModel)]="modulenseignement.prerequis">
+  Contenu:<input class="form-control" [(ngModel)]="modulenseignement.contenu">
+</ng-template>
 
+<div class="form-group">
+  <button (click)="save()">enregistrer</button>
+  <button (click)="cancel()">annuler</button>
 </div>
