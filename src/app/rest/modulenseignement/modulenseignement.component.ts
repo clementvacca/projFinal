@@ -26,4 +26,32 @@ export class ModulenseignementComponent implements OnInit {
     });
   }
 
+  public save() {
+    if (this.edit) {
+      this.update();
+    } else {
+      this.create();
+    }
+  }
+  private create() {
+    this.modEnsServ.create(this.modulenseignement).subscribe(result => {
+      this.goList();
+    });
+  }
+
+  private update() {
+    this.modEnsServ.update(this.modulenseignement).subscribe(result => {
+      this.goList();
+    });
+  }
+
+
+  public cancel() {
+    this.goList();
+  }
+
+  private goList() {
+    this.router.navigate(['/formations']);
+  }
+
 }
