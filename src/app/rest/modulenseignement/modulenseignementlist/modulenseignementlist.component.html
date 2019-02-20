@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Liste des Modules</h1>
+
+  <button type="button" class="btn btn-success" [routerLink]="['/modulenseignement','edit']" routerLinkActive="active">Ajout
+    d'un module
+  </button>
+
+  <table class="table">
+    <tr>
+      <td>Titre</td>
+      <td>Durée</td>
+      <td>Objectifs</td>
+      <td>Prerequis</td>
+      <td>Contenu</td>
+    </tr>
+    <tr *ngFor="let m of modules">
+      <td>{{m.titre}}</td>
+      <td>{{m.duree}}</td>
+      <td>{{m.objectif}}</td>
+      <td>{{m.prerequis}}</td>
+      <td>{{m.contenu}}</td>
+      <td>
+        <button type="button" class="btn btn-info" [routerLink]="['/modulenseignement','edit',m.titre]" routerLinkActive="active">
+          <span class="glyphicon glyphicon-pencil"></span>Edit
+        </button>
+
+      </td>
+      <td>
+        <button (click)=delete(m.titre) class="btn btn-danger">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<router-outlet></router-outlet>
+
