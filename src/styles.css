@@ -16,3 +16,13 @@ a.btn {
   -o-transition-duration: 0.5s;
 }
 
+p {
+  word-wrap: break-word;
+  text-align: justify;
+  font-size: 15px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}

@@ -9,9 +9,15 @@
 
 </head>
 
-<h1 style="text-align: center; color: #0f6674; margin-top: 30px">Bienvenue chez AJC Formation</h1>
-<button class="btn btn-light" [routerLink]="" routerLinkActive="active">Connexion</button>
+<header>
+  <h1 style="text-align: center; color: #0f6674; margin-top: 30px">
+    <img src="assets/images/ajc.PNG" alt="logo">
+    Bienvenue chez AJC Formation
+    <button class="btn btn-light" [routerLink]="" routerLinkActive="active" style="margin-left: 20px">Connexion</button>
+  </h1>
+</header>
 
+<body  class="container">
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -49,7 +55,49 @@
 
 </div>
 
+<article style="display: block; margin-block-start: 1em; margin-block-end: 1em; margin-top: 40px">
+
+  <h5 style="color:#117a8b">Qui sommes nous ?</h5>
+  <hr>
+  <div>
+    AJC ingénierie propose depuis 1997 des solutions sur-mesure à des entreprises de toutes tailles : grands groupes, PME, TPE…
+    <br>
+    <span>
+    • Relever de nouveaux défis
+    <br>
+    </span>
+    <span>
+    • Révéler sa vraie nature
+    <br>
+    </span>
+    <span>
+    • Se dire que tout est possible
+    <br>
+    </span>
+    <span>
+    • Changer de vie
+    </span>
+  </div>
+</article>
+
+<article style="display: block; margin-block-start: 1em; margin-block-end: 1em; margin-top: 40px">
+  <h5 style="color:#117a8b">Contacts</h5>
+  <hr>
+  <div>
+    <img src="assets/images/lieux.JPG" alt="lieu">
+    6 rue Rougemont, 75009 Paris
+    <hr>
+    <img src="assets/images/mail.JPG" alt="mail">
+    team@ajc-ingenierie.fr
+    <hr>
+    <img src="assets/images/tel.JPG" alt="tel">
+    01 75 43 86 72
+    <hr>
+  </div>
+</article>
+
 <div>
 <router-outlet></router-outlet>
 </div>
+</body>
 
