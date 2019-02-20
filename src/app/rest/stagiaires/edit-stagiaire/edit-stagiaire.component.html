@@ -1,14 +1,13 @@
 
 <div class="form-group" *ngIf="edit;else create">
-  Prenom:<input class="form-control" [(ngModel)]="stagiaire.prenom">
-  {{stagiaire.nom}}
-  Nom:<input class="form-control" [(ngModel)]="stagiaire.nom">
+  <label>Prenom</label>
+ <input class="form-control" [(ngModel)]="stagiaire.prenom">
+  <label>Nom</label><input class="form-control" [(ngModel)]="stagiaire.nom">
 </div>
 <ng-template #create>
   Prenom:<input class="form-control" [(ngModel)]="stagiaire.prenom">
   Nom:<input class="form-control" [(ngModel)]="stagiaire.nom">
 </ng-template>
-
 <div class="form-group">
   <button (click)="save()">enregistrer</button>
   <button (click)="cancel()">annuler</button>

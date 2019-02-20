@@ -25,4 +25,13 @@ export class StagiairesComponent implements OnInit {
       this.stagiaires = result;
     });
   }
+
+  delete(id: number) {
+    this.stagiaireService.delete(id).subscribe(result => {
+      this.list();
+    }, error => {
+      console.log(error);
+    });
+
+  }
 }

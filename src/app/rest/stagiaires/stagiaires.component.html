@@ -1,5 +1,7 @@
-TEST
-<a [routerLink]="['/stagiaire','edit']" routerLinkActive="active">ajout ordinateur</a>
+<h1>Liste des stagiaires</h1>
+<button type="button" class="btn btn-success" [routerLink]="['/stagiaire','edit']" routerLinkActive="active">Ajout
+  Stagiaire
+</button>
 <table class="table">
   <tr>
     <td>Id</td>
@@ -10,8 +12,15 @@ TEST
     <td>{{s.id}}</td>
     <td>{{s.nom}}</td>
     <td>{{s.prenom}}</td>
+    <td></td>
     <td>
-      <a [routerLink]="['/stagiaire','edit',s.id]" routerLinkActive="active">editer</a>
+      <button type="button" class="btn btn-info" [routerLink]="['/stagiaire','edit',s.id]" routerLinkActive="active">
+        Edit
+      </button>
+
+    </td>
+    <td>
+      <button (click)=delete(s.id) class="btn btn-danger">Supprimer</button>
     </td>
   </tr>
 </table>

@@ -39,6 +39,6 @@ export class StagiairesService {
 
   public update(stagiaire: Stagiaire): Observable<any> {
     console.log(stagiaire.id);
-    return this.http.put<any>(`http://localhost:8080/ajc/stagiaire/${stagiaire.id}`, stagiaire, {headers: this.headers});
+    return this.http.put<any>(`http://localhost:8080/ajc/rest/stagiaire/${stagiaire.id}`, stagiaire, {headers: this.headers});
   }
 }
