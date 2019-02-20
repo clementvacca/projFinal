@@ -12,17 +12,19 @@ export class ModulenseignementComponent implements OnInit {
   private modulenseignement: Modulenseignement = new Modulenseignement();
   private edit = false;
 
-  constructor(private modEnsServ: ModulenseignementService, private activatedRoute: ActivatedRoute, private router: Router  ) {
+  constructor(private modEnsServ: ModulenseignementService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
-    this.list();
-  }
-
-  private list() { // ici on appelle la fonction findAll du service
-    this.modEnsServ.findAll().subscribe(result => { // subscribe car c'est un observable
-      console.log(result);
-      this.modulenseignement = result.modulenseignement;
+    this.activatedRoute.params.subscribe(params => {
+      if (params.titre) {
+        this.edit = true;
+        console.log(this.edit);
+        this.modEnsServ.findById(params.titre).subscribe(result => {
+          console.log(result);
+          this.modulenseignement = result;
+        });
+      }
     });
   }
 
@@ -51,7 +53,7 @@ export class ModulenseignementComponent implements OnInit {
   }
 
   private goList() {
-    this.router.navigate(['/formations']);
+    this.router.navigate(['/modulenseignementlist']);
   }
 
 }

@@ -14,6 +14,7 @@ import { EditStagiaireComponent } from './rest/stagiaires/edit-stagiaire/edit-st
 import { FormationEditComponent } from './rest/formation/formation-edit/formation-edit.component';
 import { FormationDetailComponent } from './rest/formation/formation-detail/formation-detail.component';
 import { StagiairesFormationComponent } from './rest/stagiaires/stagiaires-formation/stagiaires-formation.component';
+import { ModulenseignementlistComponent } from './rest/modulenseignement/modulenseignementlist/modulenseignementlist.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { StagiairesFormationComponent } from './rest/stagiaires/stagiaires-forma
     EditStagiaireComponent,
     FormationEditComponent,
     StagiairesFormationComponent,
+    ModulenseignementlistComponent,
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, AlertModule

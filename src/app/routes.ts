@@ -6,6 +6,7 @@ import {FormationEditComponent} from './rest/formation/formation-edit/formation-
 import {FormationDetailComponent} from './rest/formation/formation-detail/formation-detail.component';
 import {StagiairesFormationComponent} from './rest/stagiaires/stagiaires-formation/stagiaires-formation.component';
 import {ModulenseignementComponent} from './rest/modulenseignement/modulenseignement.component';
+import {ModulenseignementlistComponent} from './rest/modulenseignement/modulenseignementlist/modulenseignementlist.component';
 
 export const routes: Routes = [
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
@@ -17,5 +18,7 @@ export const routes: Routes = [
   {path: 'formations/edit', component: FormationEditComponent},
   {path: 'formations/:id/detail', component: FormationDetailComponent},
   {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent},
-  {path: 'modulenseignement', component: ModulenseignementComponent}
+  {path: 'modulenseignement/edit/:titre', component: ModulenseignementComponent},
+  {path: 'modulenseignement/edit', component: ModulenseignementComponent},
+  {path: 'modulenseignementlist', component: ModulenseignementlistComponent}
 ];
