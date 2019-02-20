@@ -1,4 +1,9 @@
-
+<header>
+  <h1 style="text-align: center; color: #0f6674; margin-top: 30px">
+    Edition/Ajout d'un stagiaire
+    <img src="assets/images/ajc.PNG" alt="logo">
+  </h1>
+</header>
 <div class="form-group" *ngIf="edit;else create">
   <label>Prenom</label>
  <input class="form-control" [(ngModel)]="stagiaire.prenom">
@@ -10,6 +15,6 @@
   Nom:<input class="form-control" [(ngModel)]="stagiaire.nom">
 </ng-template>
 <div class="form-group">
-  <button (click)="save()">enregistrer</button>
-  <button (click)="cancel()">annuler</button>
+  <button (click)="save()" class="btn btn-success">Enregistrer</button>&nbsp;
+  <button (click)="cancel()" class="btn btn-danger">Annuler</button>
 </div>

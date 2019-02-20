@@ -21,15 +21,20 @@ export class ModulenseignementService {
     return this.http.get<any>('http://localhost:8080/ajc/rest/module', {headers: this.headers});
   }
 
+  public findById(titre: string) {
+    return this.http.get<any>(`http://localhost:8080/ajc/rest/module/${titre}`, {headers: this.headers});
+
+  }
+
   public create(modulenseignement: Modulenseignement): Observable<any> {
     const s = {
-      'titre': modulenseignement.titre,
-      'duree': modulenseignement.duree,
-      'objectif': modulenseignement.objectif,
-      'prerequis': modulenseignement.prerequis,
-      'contenu': modulenseignement.contenu
+      titre: modulenseignement.titre,
+      duree: modulenseignement.duree,
+      objectif: modulenseignement.objectif,
+      prerequis: modulenseignement.prerequis,
+      contenu: modulenseignement.contenu
     };
-    return this.http.post<any>(`http://localhost:8080/ajc/rest/stagiaire`, s, {headers: this.headers});
+    return this.http.post<any>(`http://localhost:8080/ajc/rest/module`, s, {headers: this.headers});
   }
 
   public delete(titre: string): Observable<any> {
@@ -38,6 +43,6 @@ export class ModulenseignementService {
   }
   public update(modulenseignement: Modulenseignement): Observable<any> {
     console.log(modulenseignement.titre);
-    return this.http.put<any>(`http://localhost:8080/rest/module/`, modulenseignement, {headers: this.headers});
+    return this.http.put<any>(`http://localhost:8080/ajc/rest/module/`, modulenseignement, {headers: this.headers});
   }
 }
