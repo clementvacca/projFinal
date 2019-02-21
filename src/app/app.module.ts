@@ -16,6 +16,7 @@ import { FormationDetailComponent } from './rest/formation/formation-detail/form
 import { StagiairesFormationComponent } from './rest/stagiaires/stagiaires-formation/stagiaires-formation.component';
 import { ModulenseignementlistComponent } from './rest/modulenseignement/modulenseignementlist/modulenseignementlist.component';
 import { HomeComponent } from './home/home.component';
+import {LoginComponent} from './login/login.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { HomeComponent } from './home/home.component';
     StagiairesFormationComponent,
     ModulenseignementlistComponent,
     HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, AlertModule

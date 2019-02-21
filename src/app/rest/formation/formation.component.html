@@ -3,8 +3,13 @@
     Liste des Formations
     <img src="assets/images/ajc.PNG" alt="logo">
   </h1>
+  <p>
+    Bienvenue {{getLogin()}} !
+    <button class="btn btn-danger" (click)="logout()">Se déconnecter</button>
+  </p>
 </header>
 <div class="container">
+
   <button [routerLink]="['/formations','edit']" routerLinkActive="active" class="btn btn-success">Ajouter une formation</button>
   <table class="table">
     <tr>

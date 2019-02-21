@@ -39,6 +39,16 @@ export class FormationComponent implements OnInit {
     });
   }
 
+  getLogin() {
+    return JSON.parse(localStorage.getItem('user')).login;
+  }
+  logout() {
+    console.log('Tentative de déconnexion');
+
+    localStorage.removeItem('user');
+    this.router.navigate(['home']);
+  }
+
 
 }
 

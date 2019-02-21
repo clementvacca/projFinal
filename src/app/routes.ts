@@ -8,13 +8,14 @@ import {StagiairesFormationComponent} from './rest/stagiaires/stagiaires-formati
 import {ModulenseignementComponent} from './rest/modulenseignement/modulenseignement.component';
 import {ModulenseignementlistComponent} from './rest/modulenseignement/modulenseignementlist/modulenseignementlist.component';
 import {HomeComponent} from './home/home.component';
+import {LoginComponent} from './login/login.component';
 
 export const routes: Routes = [
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
   {path: 'stagiaire/edit/:id', component: EditStagiaireComponent },
   {path: 'stagiaires', component: StagiairesComponent},
   {path: '', redirectTo: 'index', pathMatch: 'full'},
-  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'formations', component: FormationComponent},
   {path: 'formations/:titre/edit', component: FormationEditComponent},
   {path: 'formations/edit', component: FormationEditComponent},
@@ -26,5 +27,6 @@ export const routes: Routes = [
   {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent},
   {path: 'modulenseignement/edit/:titre', component: ModulenseignementComponent},
   {path: 'modulenseignement/edit', component: ModulenseignementComponent},
-  {path: 'modulenseignementlist', component: ModulenseignementlistComponent}
+  {path: 'modulenseignementlist', component: ModulenseignementlistComponent},
+  {path: 'login', component: LoginComponent}
 ];
