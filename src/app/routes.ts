@@ -7,12 +7,14 @@ import {FormationDetailComponent} from './rest/formation/formation-detail/format
 import {StagiairesFormationComponent} from './rest/stagiaires/stagiaires-formation/stagiaires-formation.component';
 import {ModulenseignementComponent} from './rest/modulenseignement/modulenseignement.component';
 import {ModulenseignementlistComponent} from './rest/modulenseignement/modulenseignementlist/modulenseignementlist.component';
+import {HomeComponent} from './home/home.component';
 
 export const routes: Routes = [
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
   {path: 'stagiaire/edit/:id', component: EditStagiaireComponent },
   {path: 'stagiaires', component: StagiairesComponent},
   {path: '', redirectTo: 'index', pathMatch: 'full'},
+  {path: '', component: HomeComponent},
   {path: 'formations', component: FormationComponent},
   {path: 'formations/:titre/edit', component: FormationEditComponent},
   {path: 'formations/edit', component: FormationEditComponent},
