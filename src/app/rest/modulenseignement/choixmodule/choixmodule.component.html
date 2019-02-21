@@ -1,0 +1,39 @@
+<header>
+  <h1 style="color: #0f6674;">
+    Choix du module pour la formation {{formation}}
+  </h1>
+</header>
+<div class="container">
+  <form>
+    <select class="form-control" [(ngModel)]="moduleChoisi" name="banane">
+      <option *ngFor="let m of modules" [ngValue]="m">{{m.titre}}</option>
+    </select>
+  </form>
+  <br>
+  <button (click)="ajout(moduleChoisi)" class="btn btn-success">AJOUT</button>
+  <br/>
+
+</div>
+<br/>
+<h3 style="color: #0f6674;">Les modules déjà présent dans la formation {{formation}}</h3>
+<div>
+  <table class="table">
+    <tr>
+      <th>Titre</th>
+      <th>Durée</th>
+      <th>Objectifs</th>
+      <th>Prerequis</th>
+      <th>Contenu</th>
+    </tr>
+    <tr *ngFor="let m of modulesFormation">
+      <td>{{m.titre}}</td>
+      <td>{{m.duree}}</td>
+      <td>{{m.objectif}}</td>
+      <td>{{m.prerequis}}</td>
+      <td>{{m.contenu}}</td>
+      <td><button (click)=delete(m)>Supprimer</button></td>
+    </tr>
+  </table>
+</div>
+<button class="btn btn-danger" (click)="cancel()">Retour</button>
+

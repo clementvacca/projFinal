@@ -1,0 +1,32 @@
+<header>
+  <h1 style="color: #0f6674">
+    Liste des Modules
+  </h1>
+</header>
+<div class="container">
+
+  <button type="button" class="btn btn-success" (click)=create()>Ajout
+    Stagiaire
+  </button>
+
+  <table class="table">
+    <tr>
+      <td>Titre</td>
+      <td>Durée</td>
+      <td>Objectifs</td>
+      <td>Prerequis</td>
+      <td>Contenu</td>
+    </tr>
+    <tr *ngFor="let m of modules">
+      <td>{{m.titre}}</td>
+      <td>{{m.duree}}</td>
+      <td>{{m.objectif}}</td>
+      <td>{{m.prerequis}}</td>
+      <td>{{m.contenu}}</td>
+      <td>
+        <button (click)=delete(m.titre) class="btn btn-danger">Supprimer</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<router-outlet></router-outlet>

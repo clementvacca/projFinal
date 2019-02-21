@@ -45,4 +45,8 @@ export class ModulenseignementService {
     console.log(modulenseignement.titre);
     return this.http.put<any>(`http://localhost:8080/ajc/rest/module/`, modulenseignement, {headers: this.headers});
   }
+
+  retirer(id: string, module: Modulenseignement) {
+    return this.http.delete(`http://localhost:8080/ajc/rest/${module}/`);
+  }
 }
