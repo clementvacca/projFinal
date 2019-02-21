@@ -27,7 +27,8 @@ export class StagiairesService {
   public create(stagiaire: Stagiaire): Observable<any> {
     const s = {
       'nom': stagiaire.nom,
-      'prenom': stagiaire.prenom
+      'prenom': stagiaire.prenom,
+      'formation': stagiaire.formation
     };
     return this.http.post<any>(`http://localhost:8080/ajc/rest/stagiaire`, s, {headers: this.headers});
   }
