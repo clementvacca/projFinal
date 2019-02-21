@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+
 import {Modulenseignement} from '../../../model/modulenseignement/modulenseignement';
 import {ModulenseignementService} from '../../services/modulenseignement/modulenseignement.service';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-modulenseignementlist',
@@ -10,8 +12,11 @@ import {ModulenseignementService} from '../../services/modulenseignement/modulen
 export class ModulenseignementlistComponent implements OnInit {
 
   private modules: Modulenseignement[];
+  private titre: string;
 
-  constructor(private modulenseignementService: ModulenseignementService) {
+  constructor(private modulenseignementService: ModulenseignementService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -25,11 +30,18 @@ export class ModulenseignementlistComponent implements OnInit {
     });
   }
 
-  delete(titre: string) {
-    this.modulenseignementService.delete(titre).subscribe(result => {
+  delete(module: Modulenseignement) {
+    this.modulenseignementService.retirer(this.titre, module).subscribe(result => {
       this.list();
     }, error => {
       console.log(error);
     });
+  }
+
+  ajout() {
+    this.activatedRoute.params.subscribe(params => {
+      this.router.navigate(['formations', params.titre, 'detail', 'modules']);
+    });
+
   }
 }

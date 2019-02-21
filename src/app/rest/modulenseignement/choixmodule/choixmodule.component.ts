@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+
 import {ModulenseignementService} from '../../services/modulenseignement/modulenseignement.service';
 import {FormationService} from '../../services/formation/formation.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Modulenseignement} from '../../../model/modulenseignement/modulenseignement';
 import {Formation} from '../../../model/formation/formation';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-choixmodule',
@@ -45,7 +46,7 @@ export class ChoixmoduleComponent implements OnInit {
     this.formationService.findById(this.formation).subscribe(result => {
       this.formationVrai = result;
     });
-    this.modulesFormation.push(this.moduleChoisi);
+    this.modulesFormation.push(module);
     this.formationVrai.modules = this.modulesFormation;
     this.formationService.update(this.formationVrai).subscribe(result => {
       this.formationVrai = result;

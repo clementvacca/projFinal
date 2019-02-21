@@ -24,4 +24,11 @@ export class ModuleFormationComponent implements OnInit {
   ngOnInit() {
   }
 
+  ajout() {
+
+  }
+
+  delete(titre: string) {
+
+  }
 }

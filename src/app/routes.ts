@@ -10,6 +10,7 @@ import {ModulenseignementlistComponent} from './rest/modulenseignement/modulense
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './rest/services/auth/auth.guard';
+import {ChoixmoduleComponent} from './rest/modulenseignement/choixmodule/choixmodule.component';
 
 export const routes: Routes = [
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
@@ -23,6 +24,7 @@ export const routes: Routes = [
   {path: 'formations/:titre/detail', component: FormationDetailComponent},
   {path: 'formations/:titre/detail/stagiaires/:edit/:id', component: EditStagiaireComponent},
   {path: 'formations/:titre/detail/stagiaires/:edit', component: EditStagiaireComponent},
+  {path: 'formations/:titre/detail/modules', component: ChoixmoduleComponent},
   {path: 'modulenseignement', component: ModulenseignementComponent},
   {path: 'formations/:id/detail', component: FormationDetailComponent},
   {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent},

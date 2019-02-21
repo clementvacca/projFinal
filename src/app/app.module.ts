@@ -18,7 +18,9 @@ import {ModulenseignementlistComponent} from './rest/modulenseignement/modulense
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component'; // SECURITE
 import {AuthGuard} from './rest/services/auth/auth.guard';
-import {AuthService} from './rest/services/auth/auth.service'; // SECURITE
+import {AuthService} from './rest/services/auth/auth.service';
+import {ChoixmoduleComponent} from './rest/modulenseignement/choixmodule/choixmodule.component';
+import {ModuleFormationComponent} from './rest/modulenseignement/module-formation/module-formation.component'; // SECURITE
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import {AuthService} from './rest/services/auth/auth.service'; // SECURITE
     StagiairesFormationComponent,
     ModulenseignementlistComponent,
     HomeComponent,
+    ChoixmoduleComponent,
+    ModuleFormationComponent,
     LoginComponent
   ],
   imports: [

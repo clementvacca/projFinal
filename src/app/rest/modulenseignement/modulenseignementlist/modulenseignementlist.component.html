@@ -5,7 +5,7 @@
 </header>
 <div class="container">
 
-  <button type="button" class="btn btn-success" [routerLink]="['/modulenseignement','edit']" routerLinkActive="active">Ajout
+  <button type="button" class="btn btn-success" (click)="ajout()" routerLinkActive="active">Ajout
     d'un module
   </button>
 
@@ -24,13 +24,7 @@
       <td>{{m.prerequis}}</td>
       <td>{{m.contenu}}</td>
       <td>
-        <button type="button" class="btn btn-info" [routerLink]="['/modulenseignement','edit',m.titre]" routerLinkActive="active">
-          <span class="glyphicon glyphicon-pencil"></span>Edit
-        </button>
-
-      </td>
-      <td>
-        <button (click)=delete(m.titre) class="btn btn-danger">Supprimer</button>
+        <button (click)=delete(m) class="btn btn-danger">Supprimer</button>
       </td>
     </tr>
   </table>
