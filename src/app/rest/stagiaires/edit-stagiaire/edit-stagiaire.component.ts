@@ -17,42 +17,41 @@ export class EditStagiaireComponent implements OnInit {
   private formation: Formation = new Formation();
   private formations: Formation[];
   private edit = false;
-  private editFormation = false;
+  private editFormation = 'false';
 
   constructor(private stagiaireService: StagiairesService, private formationService: FormationService, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
+
     this.formationService.findAll().subscribe(result => {
       this.formations = result;
     });
     this.activatedRoute.params.subscribe(params => {
       this.editFormation = params.edit;
-      if (params.id) {
-        this.edit = true;
+      if (this.editFormation === 'true') {
         this.stagiaireService.findById(params.id).subscribe(result => {
-          //console.log(result);
           this.stagiaire = result;
         });
-        this.formationService.findById(params.titre).subscribe(result => {
-          this.formation = result;
-          this.stagiaire.formation = this.formation;
-        });
       }
+      this.formationService.findById(params.titre).subscribe(result => {
+        this.formation = result;
+        this.stagiaire.formation = this.formation;
+      });
     });
   }
 
   public save() {
-
-    if (this.editFormation) {
-      console.log('ajkdgazkj');
+    if (this.editFormation === 'true') {
       this.update();
     } else {
+      console.log('passe dans le create');
       this.create();
     }
   }
 
   private create() {
+    console.log(this.stagiaire.formation);
     this.stagiaireService.create(this.stagiaire).subscribe(result => {
       this.goList();
     });
@@ -78,15 +77,9 @@ export class EditStagiaireComponent implements OnInit {
   }
 
   private goList() {
-    if (this.editFormation) {
-      this.activatedRoute.params.subscribe(params => {
-        this.router.navigate([`formations/${params.titre}/detail`]);
-        console.log('EDITFORMATION');
-      });
-    } else {
-      console.log('testst');
-      this.router.navigate(['/stagiaires']);
-    }
+    this.activatedRoute.params.subscribe(params => {
+      this.router.navigate([`formations/${params.titre}/detail`]);
+    });
 
   }
 

@@ -20,7 +20,7 @@ export const routes: Routes = [
   {path: 'formations/edit', component: FormationEditComponent},
   {path: 'formations/:titre/detail', component: FormationDetailComponent},
   {path: 'formations/:titre/detail/stagiaires/:edit/:id', component: EditStagiaireComponent},
-  {path: 'formations/:titre/detail/stagiaires/:edit/', component: EditStagiaireComponent},
+  {path: 'formations/:titre/detail/stagiaires/:edit', component: EditStagiaireComponent},
   {path: 'modulenseignement', component: ModulenseignementComponent},
   {path: 'formations/:id/detail', component: FormationDetailComponent},
   {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent},

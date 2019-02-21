@@ -13,6 +13,8 @@ export class StagiairesFormationComponent implements OnInit {
 
   private stagiaires: Stagiaire[];
   editFormation = false;
+  titre: string;
+  id: number;
 
   constructor(private stagiaireService: FormationService, private stagiaireService2: StagiairesService,
               private activatedRoute: ActivatedRoute,
@@ -22,6 +24,8 @@ export class StagiairesFormationComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.list(params.titre);
+      this.titre = params.titre;
+      this.id = params.id;
       this.editFormation = true;
     });
   }
@@ -35,7 +39,7 @@ export class StagiairesFormationComponent implements OnInit {
 
   delete(id: number) {
     this.stagiaireService2.delete(id).subscribe(result => {
-      this.list(result.id);
+        this.list(this.titre);
     }, error => {
       console.log(error);
     });
@@ -46,6 +50,13 @@ export class StagiairesFormationComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.router.navigate(['/formations', params.titre, 'detail', 'stagiaires',
         this.editFormation, id]);
+    });
+  }
+
+  create() {
+    this.editFormation = false;
+    this.activatedRoute.params.subscribe(params => {
+      this.router.navigate(['formations', params.titre, 'detail', 'stagiaires', this.editFormation]);
     });
   }
 
