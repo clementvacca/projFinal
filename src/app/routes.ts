@@ -9,6 +9,7 @@ import {ModulenseignementComponent} from './rest/modulenseignement/modulenseigne
 import {ModulenseignementlistComponent} from './rest/modulenseignement/modulenseignementlist/modulenseignementlist.component';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
+import {AuthGuard} from './rest/services/auth/auth.guard';
 
 export const routes: Routes = [
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
@@ -16,7 +17,7 @@ export const routes: Routes = [
   {path: 'stagiaires', component: StagiairesComponent},
   {path: '', redirectTo: 'index', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'formations', component: FormationComponent},
+  {path: 'formations', canActivate: [AuthGuard], component: FormationComponent},
   {path: 'formations/:titre/edit', component: FormationEditComponent},
   {path: 'formations/edit', component: FormationEditComponent},
   {path: 'formations/:titre/detail', component: FormationDetailComponent},

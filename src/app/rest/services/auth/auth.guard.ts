@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
     if (!isLoggedIn) {
       // Si pas d'utilisateur connecté : redirection vers la page de login
       console.log('Vous n\'êtes pas connectés');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login'], { queryParams: { redirectUrl: state.url }});
     }
     return isLoggedIn;
   }

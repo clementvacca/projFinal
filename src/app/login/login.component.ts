@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private router: Router) { } // SECURITE
+  constructor(private router: Router, private route: ActivatedRoute) { } // SECURITE
 
   ngOnInit() { }
 
@@ -20,5 +20,10 @@ export class LoginComponent implements OnInit {
     // Vérifier que login/mdp sont correctes, par exemple par une requête à un service REST
     localStorage.setItem('user', JSON.stringify({login : this.model.username}));
     this.router.navigate(['/formations']);
+    // On récupère l'url de redirection
+    const redirectUrl = this.route.snapshot.queryParams['redirectUrl'] || '/formations';
+
+    // On accède à la page souhaitée
+    this.router.navigate([redirectUrl]);
   }
 }
