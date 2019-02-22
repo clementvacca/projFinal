@@ -6,18 +6,29 @@
   <h6><p><i>Bienvenue</i> &nbsp; <b>{{getLogin()}}</b></p></h6>
 
 </header>
-
-<div class="container">
-  <button class="btn btn-danger" (click)="logout()">Se déconnecter</button>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="active"><b>AJC</b></a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/stagiaires']" routerLinkActive="active">Les stagiaires<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/modulenseignementlist']" routerLinkActive="active">Les modules<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <a class="btn btn-light" (click)="logout()">Se déconnecter</a>
+  </div>
+</nav>
 <br>
 <div class="container">
 
   <button [routerLink]="['/formations','edit']" routerLinkActive="active" class="btn btn-success">Ajouter une
     formation
   </button>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button class="btn btn-info" [routerLink]="['/stagiaires']" routerLinkActive="active">Liste des stagiaires</button>
   <table class="table">
     <tr>
       <th>Nom de la formation</th>

@@ -1,18 +1,18 @@
 
   <header>
     <h1 style="text-align: center; color: #0f6674; margin-top: 30px">
-      Gestion des modules d'une formation
+      Gestion des modules de la BDD
       <img src="assets/images/ajc.PNG" alt="logo">
     </h1>
   </header>
   <div class="container">
   <!-- Si tu on est en mode edit les champ seront pour l'edition; sinon on crée => on passe aux champs de ng-template-->
   <div class="form-group" *ngIf="edit;else create">
-  Titre:<input class="form-control" [(ngModel)]="modulenseignement.titre">
-  Duree:<input class="form-control" [(ngModel)]="modulenseignement.duree">
-  Objectif:<input class="form-control" [(ngModel)]="modulenseignement.objectif">
-  Prerequis:<input class="form-control" [(ngModel)]="modulenseignement.prerequis">
-  Contenu:<input class="form-control" [(ngModel)]="modulenseignement.contenu">
+  <b>Titre:</b><input class="form-control" [(ngModel)]="modulenseignement.titre">
+  <b>Duree:</b><input class="form-control" [(ngModel)]="modulenseignement.duree">
+    <b>Objectif:</b><input class="form-control" [(ngModel)]="modulenseignement.objectif">
+  <b>Prerequis:</b><input class="form-control" [(ngModel)]="modulenseignement.prerequis">
+  <b>Contenu:</b><input class="form-control" [(ngModel)]="modulenseignement.contenu">
 </div>
 <ng-template #create>
   Titre:<input class="form-control" [(ngModel)]="modulenseignement.titre">
@@ -21,7 +21,7 @@
   Prerequis:<input class="form-control" [(ngModel)]="modulenseignement.prerequis">
   Contenu:<input class="form-control" [(ngModel)]="modulenseignement.contenu">
 </ng-template>
-
+<br><br>
 <div class="form-group">
   <button class="btn btn-success" (click)="save()">Enregistrer</button>&nbsp;
   <button class="btn btn-danger" (click)="cancel()">Annuler</button>
