@@ -1,0 +1,31 @@
+<a style="text-decoration: none"[routerLink]="['/formations']" routerLinkActive="active"><header>
+  <h1 style="color: #0f6674">
+    Liste des Modules
+  </h1>
+</header>
+</a>
+<div class="container">
+  <button type="button" class="btn btn-success" [routerLink]="['/modulenseignement']" routerLinkActive="active">Ajout
+    d'un module
+  </button>
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <button type="button" class="btn btn-dark" [routerLink]="['/formations']" routerLinkActive="active">Retour
+  </button>
+  <br><br>
+  <table class="table">
+    <tr>
+      <th>Titre</th>
+      <th>Durée</th>
+      <th>Objectifs</th>
+      <th>Prerequis</th>
+      <th>Contenu</th>
+    </tr>
+    <tr *ngFor="let m of modules">
+      <td>{{m.titre}}</td>
+      <td>{{m.duree}}</td>
+      <td>{{m.objectif}}</td>
+      <td>{{m.prerequis}}</td>
+      <td>{{m.contenu}}</td>
+    </tr>
+  </table>
+</div>
