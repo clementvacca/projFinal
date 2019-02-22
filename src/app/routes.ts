@@ -11,6 +11,7 @@ import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './rest/services/auth/auth.guard';
 import {ChoixmoduleComponent} from './rest/modulenseignement/choixmodule/choixmodule.component';
+import {AoduleenseignementlistAbsolueComponent} from './rest/modulenseignement/aoduleenseignementlist-absolue/aoduleenseignementlist-absolue.component';
 
 export const routes: Routes = [
   {path: 'stagiaire/edit', component: EditStagiaireComponent},
@@ -30,6 +31,6 @@ export const routes: Routes = [
   {path: 'formations/:id/detail/stagiaires', component: StagiairesFormationComponent},
   {path: 'modulenseignement/edit/:titre', component: ModulenseignementComponent},
   {path: 'modulenseignement/edit', component: ModulenseignementComponent},
-  {path: 'modulenseignementlist', component: ModulenseignementlistComponent},
+  {path: 'modulenseignementlist', component: AoduleenseignementlistAbsolueComponent},
   {path: 'login', component: LoginComponent}
 ];

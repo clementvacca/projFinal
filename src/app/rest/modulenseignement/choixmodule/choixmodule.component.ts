@@ -1,4 +1,3 @@
-
 import {ModulenseignementService} from '../../services/modulenseignement/modulenseignement.service';
 import {FormationService} from '../../services/formation/formation.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -56,20 +55,31 @@ export class ChoixmoduleComponent implements OnInit {
   }
 
   private delete(module: Modulenseignement) {
-    console.log(this.formationVrai);
-    this.formationService.findById(this.formation).subscribe(result => {
-      this.formationVrai = result;
-      this.modulenseignementService.retirer(this.formationVrai.id, module);
+    //  console.log(this.formationVrai);
+    // this.formationService.findById(this.formation).subscribe(result => {
+    //   this.formationVrai = result;
+    //   this.modulenseignementService.retirer(this.formationVrai.id, module);
+    // });
+    //   this.formationService.update(this.formationVrai).subscribe(result => {
+    //  this.formationVrai = result;
+    //   });
+    this.modulenseignementService.retirer(this.formation, module).subscribe(result => {
+      this.listM();
+    }, error => {
+      console.log(error);
     });
-    this.formationService.update(this.formationVrai).subscribe(result => {
-      this.formationVrai = result;
-    });
-    this.list();
   }
 
   private cancel() {
     this.activatedRoute.params.subscribe(params => {
       this.router.navigate([`formations/${params.titre}/detail`]);
     });
+  }
+
+  private listM() {
+    this.formationService.findById(this.titre).subscribe(result => {
+      this.modulesFormation = result.modules;
+    });
+
   }
 }

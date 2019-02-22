@@ -1,20 +1,17 @@
 <header>
-  <h4 style="color: #0f6674;">
+  <h1 style="text-align: center; color: #0f6674; margin-top: 30px">
     Liste des stagiaires
-  </h4>
+    <a [routerLink]="['/formations']" routerLinkActive="active"><img src="assets/images/ajc.PNG" alt="logo"></a>
+  </h1>
 </header>
 <div class="container">
 
-  <button type="button" class="btn btn-success" [routerLink]="['/stagiaire','edit']" routerLinkActive="active">Ajout
-    Stagiaire
-  </button>
-
   <table class="table">
     <tr>
-      <td>Id</td>
-      <td>Nom</td>
-      <td>Prenom</td>
-      <td>Formation</td>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Prenom</th>
+      <th>Formation</th>
     </tr>
     <tr *ngFor="let s of stagiaires">
       <td>{{s.id}}</td>
@@ -22,15 +19,6 @@
       <td>{{s.prenom}}</td>
       <td>{{s.formation.id}}</td>
       <td></td>
-      <td>
-        <button type="button" class="btn btn-info" [routerLink]="['/stagiaire','edit',s.id]" routerLinkActive="active">
-          <span class="glyphicon glyphicon-pencil"></span>Edit
-        </button>
-
-      </td>
-      <td>
-        <button (click)=delete(s.id) class="btn btn-danger">Supprimer</button>
-      </td>
     </tr>
   </table>
 </div>

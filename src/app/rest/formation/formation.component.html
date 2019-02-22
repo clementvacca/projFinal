@@ -1,16 +1,23 @@
 <header>
   <h1 style="text-align: center; color: #0f6674; margin-top: 30px">
     Liste des Formations
-    <img src="assets/images/ajc.PNG" alt="logo">
+    <a [routerLink]="['/home']" routerLinkActive="active"><img src="assets/images/ajc.PNG" alt="logo"></a>
   </h1>
-  <p>
-    Bienvenue {{getLogin()}}
-    <button class="btn btn-danger" (click)="logout()">Se déconnecter</button>
-  </p>
+  <h6><p><i>Bienvenue</i> &nbsp; <b>{{getLogin()}}</b></p></h6>
+
 </header>
+
+<div class="container">
+  <button class="btn btn-danger" (click)="logout()">Se déconnecter</button>
+</div>
+<br>
 <div class="container">
 
-  <button [routerLink]="['/formations','edit']" routerLinkActive="active" class="btn btn-success">Ajouter une formation</button>
+  <button [routerLink]="['/formations','edit']" routerLinkActive="active" class="btn btn-success">Ajouter une
+    formation
+  </button>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-info" [routerLink]="['/stagiaires']" routerLinkActive="active">Liste des stagiaires</button>
   <table class="table">
     <tr>
       <th>Nom de la formation</th>
@@ -25,9 +32,18 @@
       <td>{{f.id}}</td>
       <td>{{f.dateDebut}}</td>
       <td>{{f.duree}}</td>
-      <td><button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active" type="button" class="btn btn-info">Details</button> </td>
-      <td><button [routerLink]="['/formations', f.id,'edit']" routerLinkActive="active" class="btn btn-info">Editer</button> </td>
-      <td><button (click)="delete(f.id)" class="btn btn-danger">Supprimer</button> </td>
+      <td>
+        <button [routerLink]="['/formations', f.id,'detail']" routerLinkActive="active" type="button"
+                class="btn btn-info">Details
+        </button>
+      </td>
+      <td>
+        <button [routerLink]="['/formations', f.id,'edit']" routerLinkActive="active" class="btn btn-info">Editer
+        </button>
+      </td>
+      <td>
+        <button (click)="delete(f.id)" class="btn btn-danger">Supprimer</button>
+      </td>
     </tr>
   </table>
 </div>

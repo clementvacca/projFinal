@@ -20,7 +20,8 @@ import {LoginComponent} from './login/login.component'; // SECURITE
 import {AuthGuard} from './rest/services/auth/auth.guard';
 import {AuthService} from './rest/services/auth/auth.service';
 import {ChoixmoduleComponent} from './rest/modulenseignement/choixmodule/choixmodule.component';
-import {ModuleFormationComponent} from './rest/modulenseignement/module-formation/module-formation.component'; // SECURITE
+import {ModuleFormationComponent} from './rest/modulenseignement/module-formation/module-formation.component';
+import { AoduleenseignementlistAbsolueComponent } from './rest/modulenseignement/aoduleenseignementlist-absolue/aoduleenseignementlist-absolue.component'; // SECURITE
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import {ModuleFormationComponent} from './rest/modulenseignement/module-formatio
     HomeComponent,
     ChoixmoduleComponent,
     ModuleFormationComponent,
-    LoginComponent
+    LoginComponent,
+    AoduleenseignementlistAbsolueComponent
   ],
   imports: [
     BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, AlertModule

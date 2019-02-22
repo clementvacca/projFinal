@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Modulenseignement} from '../../../model/modulenseignement/modulenseignement';
@@ -41,12 +41,13 @@ export class ModulenseignementService {
     return this.http.delete(`
     http://localhost:8080/ajc/rest/module/${titre}`, {headers: this.headers});
   }
+
   public update(modulenseignement: Modulenseignement): Observable<any> {
     console.log(modulenseignement.titre);
     return this.http.put<any>(`http://localhost:8080/ajc/rest/module/`, modulenseignement, {headers: this.headers});
   }
 
-  retirer(id: string, module: Modulenseignement) {
-    return this.http.delete(`http://localhost:8080/ajc/rest/${module}/`);
+  retirer(titre: string, module: Modulenseignement): Observable<any> {
+    return this.http.delete(`http://localhost:8080/ajc/rest/module/formation/${titre}/${module.titre}`);
   }
 }
